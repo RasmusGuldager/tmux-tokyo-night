@@ -1,12 +1,11 @@
 <div align="center">
-  <h1>Tokyo Night Tmux Theme</h1>
+  <h1>Fork of Tokyo Night Tmux Theme</h1>
   
-  <h4>A Tokyo Night tmux theme directly inspired from Tokyo Night vim theme</h4>
+  <h4>By Rasmus Guldager, originally created by fabioluciano</h4>
     
   ---
     
   **[<kbd> <br> Features <br> </kbd>][features]**
-  **[<kbd> <br> Screenshots <br> </kbd>][screenshots]**
   **[<kbd> <br> Install <br> </kbd>][install]**
   **[<kbd> <br> Available Configurations <br> </kbd>][available-configurations]**
   **[<kbd> <br> Plugins <br> </kbd>][plugins]**
@@ -29,20 +28,19 @@
 - **yay** - Show yay;
 - **battery** - Show battery;
 
-## Screenshots
+## Additional Plugins
+- **Ip** - Show local IP;
+- **Internet** - Show internet connection;
+- **Ram** - Show ram usage;
+- **Cpu** - Show cpu usage;
 
-### Tokyo Night - Default Variation
-
-| Inactive                                                                                                             | Active                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| ![Tokyo Night tmux theme - Default Variation](./assets/tokyo-night.png "Tokyo Night tmux theme - Default Variation") | ![Tokyo Night tmux theme - Default Variation](./assets/tokyo-night-active.png "Tokyo Night tmux theme - Default Variation") |
 
 ## Install
 
 Add plugin to the list of `TPM` plugins in `.tmux.conf`:
 
 ```
-set -g @plugin 'fabioluciano/tmux-tokyo-night'
+set -g @plugin 'RasmusGuldager/tmux-tokyo-night'
 ```
 
 Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can now use the plugin.
@@ -54,11 +52,11 @@ Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can 
 | `@theme_variation`                  | The tokyo night theme variation to be use | `night`, `storm`, `moon`                                                | `night`            |
 | `@theme_active_pane_border_style`   |                                           |                                                                         | `#737aa2`          |
 | `@theme_inactive_pane_border_style` |                                           |                                                                         | `#292e42`          |
-| `@theme_left_separator`             |                                           |                                                                         | ``                |
-| `@theme_right_separator`            |                                           |                                                                         | ``                |
+| `@theme_left_separator`             |                                           |                                                                         | ``               |
+| `@theme_right_separator`            |                                           |                                                                         | ``               |
 | `@theme_window_with_activity_style` |                                           |                                                                         | `italics`          |
 | `@theme_status_bell_style`          |                                           |                                                                         | `bold`             |
-| `@theme_plugins`                    |                                           | `datetime`, `weather`, `playerctl`, `spt`, `homebrew`, `yay`, `battery` | `datetime,weather` |
+| `@theme_plugins`                    |                                           | `datetime`, `weather`, `playerctl`, `spt`, `homebrew`, `yay`, `battery`, `ip`, `internet`, `ram`, `cpu` | `battery,datetime` |
 | `@theme_disable_plugins`            | Disables plugins                          | `1`, `0`                                                                | `0`                |
 
 ## Plugins
@@ -104,12 +102,12 @@ Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can 
 
 ### Battery
 
-Shows battery charging status (charging or discharging) and battery percentage.
+> Shows battery charging status (charging or discharging) and battery percentage.
 
 | Configuration                                    | Description                        | Avaliable Options | Default  |
 | ------------------------------------------------ | ---------------------------------- | ----------------- | -------- |
-| `@theme_plugin_battery_charging_icon`            | Icon to display when charging      | Any character     |         |
-| `@theme_plugin_battery_discharging`              | Icon to display when on battery    | Any character     | 󰁹        |
+| `@theme_plugin_battery_charging_icon`            | Icon to display when charging      | Any character     |        |
+| `@theme_plugin_battery_discharging`              | Icon to display when on battery    | Any character     | 󰁹       |
 | `@theme_plugin_battery_red_threshold`            | Show in red when below this %      | 0-100             | 10       |
 | `@theme_plugin_battery_yellow_threshold`         | Show in yellow when below this %   | 0-100             | 30       |
 | `@theme_plugin_battery_red_accent_color`         | Color when < red threshold         | Palette color     | red      |
@@ -118,6 +116,54 @@ Shows battery charging status (charging or discharging) and battery percentage.
 | `@theme_plugin_battery_yellow_accent_color_icon` | Icon color when < yellow threshold | Palette color     | orange   |
 | `@theme_plugin_battery_green_accent_color`       | Color when > yellow threshold      | Palette color     | blue7    |
 | `@theme_plugin_battery_green_accent_color_icon`  | Icon color when > yellow threshold | Palette color     | blue0    |
+
+
+## Additional plugins
+
+### IP
+
+> Shows you IP on selected interface
+
+| Configuration                        | Description | Avaliable Options | Default |
+| ------------------------------------ | ----------- | ----------------- | ------- |
+| `@theme_plugin_ip_icon`              |             | Any character     |   󰖩    |
+| `@theme_plugin_ip_accent_color`      |             | Palette color     | Blue7   |
+| `@theme_plugin_ip_accent_color_icon` |             | Palette color     | Blue0   |
+| `@theme_plugin_ip_interface`         | What interface the ip is obtained from |                   | Native network card |
+
+
+### Internet
+
+> Shows what network you are connected to. If connected to more than one, the one with the highest priority is shown.
+
+| Configuration                              | Description | Avaliable Options | Default |
+| ------------------------------------------ | ----------- | ----------------- | ------- |
+| `@theme_plugin_internet_icon`              |             | Any character     |    🌐   |
+| `@theme_plugin_internet_accent_color`      |             | Palette color     | Blue7   |
+| `@theme_plugin_internet_accent_color_icon` |             | Palette color     | Blue0   |
+
+
+### Ram
+
+> Shows ram usage in GB
+
+| Configuration                         | Description | Avaliable Options | Default |
+| ------------------------------------- | ----------- | ----------------- | ------- |
+| `@theme_plugin_ram_icon`              |             | Any character     |   󱤓    |
+| `@theme_plugin_ram_accent_color`      |             | Palette color     | Blue7   |
+| `@theme_plugin_ram_accent_color_icon` |             | Palette color     | Blue0   |
+
+
+### Cpu
+
+> Shows cpu usage in percentage
+
+| Configuration                         | Description | Avaliable Options | Default |
+| ------------------------------------- | ----------- | ----------------- | ------- |
+| `@theme_plugin_cpu_icon`              |             |  Any character    |       |
+| `@theme_plugin_cpu_accent_color`      |             |  Palette color    | Blue7   |
+| `@theme_plugin_cpu_accent_color_icon` |             |  Palette color    | Blue0   |
+
 
 ### Example configuration
 
@@ -130,13 +176,14 @@ set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-logging'
 
-set -g @plugin 'fabioluciano/tmux-tokyo-night'
+set -g @plugin 'RasmusGuldager/tmux-tokyo-night'
 
 ### Tokyo Night Theme configuration
 set -g @theme_variation 'moon'
 set -g @theme_left_separator ''
 set -g @theme_right_separator ''
-set -g @theme_plugins 'datetime,weather,playerctl,yay'
+set -g @theme_plugins 'battery,datetime,ip,internet,ram,cpu'
+set -g @theme_plugin_ip_interface 'wls2p0'
 
 run '~/.tmux/plugins/tpm/tpm'
 ```
