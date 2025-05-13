@@ -10,7 +10,7 @@ plugin_internet_accent_color_icon=$(get_tmux_option "@theme_plugin_internet_acce
 
 export plugin_internet_icon plugin_internet_accent_color plugin_internet_accent_color_icon
 
-# Get the top active connection name (excluding 'lo')
+# Get the top active connection name (excluding lo and docker)
 if command -v nmcli &>/dev/null; then
     connection_name=$(nmcli -t -f NAME,DEVICE,TYPE,STATE connection show --active | \
                       awk -F: '$2 != "lo" && $2 != "docker0" && $4 == "activated" { print $1; exit }')

@@ -26,7 +26,7 @@ fi
 window_with_activity_style=$(get_tmux_option "@theme_window_with_activity_style" "italics")
 window_status_bell_style=$(get_tmux_option "@theme_status_bell_style" "bold")
 
-IFS=',' read -r -a plugins <<<"$(get_tmux_option "@theme_plugins" "battery,datetime,ip,internet,ram,cpu")"
+IFS=',' read -r -a plugins <<<"$(get_tmux_option "@theme_plugins" "battery,datetime")"
 
 tmux set-option -g status-left-length 100
 tmux set-option -g status-right-length 100

@@ -12,8 +12,9 @@ plugin_ip_interface=$(get_tmux_option "@theme_plugin_ip_interface" "")
 
 # Set default if empty
 if [[ -z "$plugin_ip_interface" ]]; then
-    plugin_ip_interface="wlp2s0"
+    plugin_ip_interface=$(ip -o link show | awk -F': ' '/state UP/ && $2 != "lo" {print $2; exit}')
 fi
+
 
 export plugin_ip_icon plugin_ip_accent_color plugin_ip_accent_color_icon
 
