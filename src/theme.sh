@@ -26,7 +26,7 @@ fi
 window_with_activity_style=$(get_tmux_option "@theme_window_with_activity_style" "italics")
 window_status_bell_style=$(get_tmux_option "@theme_status_bell_style" "bold")
 
-IFS=',' read -r -a plugins <<<"$(get_tmux_option "@theme_plugins" "datetime,weather")"
+IFS=',' read -r -a plugins <<<"$(get_tmux_option "@theme_plugins" "battery,datetime,ip,internet,ram,cpu")"
 
 tmux set-option -g status-left-length 100
 tmux set-option -g status-right-length 100
@@ -125,7 +125,7 @@ if [ "$theme_disable_plugins" -ne 1 ]; then
 				plugin_output_string="${plugin_icon_output}${plugin_output} "
 			fi
 
-			# For the battery plugin, we pass $plugin_output_string as an argument to the script so 
+			# For the battery plugin, we pass $plugin_output_string as an argument to the script so
 			# we can dynamically change the icon and accent colors
 			if [ "$plugin" == "battery" ]; then
 				plugin_output_string="#($plugin_script_path \"$plugin_output_string\")"
