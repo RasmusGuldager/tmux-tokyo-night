@@ -63,24 +63,24 @@ Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can 
 
 ### Datetime
 
-> Prints informations about the current date and time.
+> Prints information about the current date and time.
 
 | Configuration                              | Description | Avaliable Options | Default |
 | ------------------------------------------ | ----------- | ----------------- | ------- |
-| `@theme_plugin_datetime_icon`              |             | Any character 📅  | Nerd Font 'Calendar' icon        |
-| `@theme_plugin_datetime_accent_color`      |             |                   |         |
-| `@theme_plugin_datetime_accent_color_icon` |             |                   |         |
-| `@theme_plugin_datetime_format`            |             |                   |         |
+| `@theme_plugin_datetime_icon`              |             | Any character 📅  | Nerd Font 'Calendar' icon |
+| `@theme_plugin_datetime_accent_color`      |             | Palette color     | Blue7   |
+| `@theme_plugin_datetime_accent_color_icon` |             | Palette color     | Blue0   |
+| `@theme_plugin_datetime_format`            |             | Any combination of %M, %D, %h, %m, %s | %D %H:%M:%S |
 
 ### Weather
 
-> Prints informations about the current weather. It uses `jq` to parse the response. Make shure to have it;
+> Prints information about the current weather. It uses `jq` to parse the response. Make sure to have it.
 
 | Configuration                             | Description | Avaliable Options | Default |
 | ----------------------------------------- | ----------- | ----------------- | ------- |
 | `@theme_plugin_weather_icon`              |             | Any character 🌡️  |  Font Awesome 'Cloud' icon        |
-| `@theme_plugin_weather_accent_color`      |             |                   |         |
-| `@theme_plugin_weather_accent_color_icon` |             |                   |         |
+| `@theme_plugin_weather_accent_color`      |             | Palette color     | Blue7   |
+| `@theme_plugin_weather_accent_color_icon` |             | Palette color     | Blue0   |
 | `@theme_plugin_weather_format`            | Format for displaying weather information | `%t`, `%c`, `%h`, `%w` (temperature, condition, humidity, wind) | `%t+H:%h` |
 | `@theme_plugin_weather_location`          | Location for weather (city/country)   | `"City, Country"`  | IP-based location detection |
 
@@ -122,14 +122,14 @@ Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can 
 
 ### IP
 
-> Shows you IP on selected interface
+> Shows you the IP on the selected interface
 
 | Configuration                        | Description | Avaliable Options | Default |
 | ------------------------------------ | ----------- | ----------------- | ------- |
 | `@theme_plugin_ip_icon`              |             | Any character     |   󰖩    |
 | `@theme_plugin_ip_accent_color`      |             | Palette color     | Blue7   |
 | `@theme_plugin_ip_accent_color_icon` |             | Palette color     | Blue0   |
-| `@theme_plugin_ip_interface`         | What interface the ip is obtained from |                   | Native network card |
+| `@theme_plugin_ip_interface`         | What interface the ip is obtained from | Any interface id | Native network card |
 
 
 ### Internet
