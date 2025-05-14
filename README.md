@@ -70,7 +70,7 @@ Hit <kbd>prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it. You can 
 | `@theme_plugin_datetime_icon`              |             | Any character 📅  | Nerd Font 'Calendar' icon |
 | `@theme_plugin_datetime_accent_color`      |             | Palette color     | Blue7   |
 | `@theme_plugin_datetime_accent_color_icon` |             | Palette color     | Blue0   |
-| `@theme_plugin_datetime_format`            |             | Any combination of %M, %D, %h, %m, %s | %D %H:%M:%S |
+| `@theme_plugin_datetime_format`            |             | https://man7.org/linux/man-pages/man1/date.1.html | %D %H:%M:%S |
 
 ### Weather
 
